@@ -1,9 +1,10 @@
 package controller;
 
-public class Main {
+import view.GUI;
 
+public class Main {
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 
