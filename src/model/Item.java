@@ -1,15 +1,17 @@
 package model;
 
 public abstract class Item {
-	private String name;
+	private String title;
+	private String author;
 	private int id;
 	private int quantityOwned;
 	private int quantityAvailable;
 	private User[] clients;
 	private static int idGenerator = 0;
 
-	public Item(String name, int quantityOwned) {
-		this.name = name;
+	public Item(String title, int quantityOwned) {
+		this.title = title;
+		this.author = author;
 		this.quantityOwned = quantityOwned;
 		quantityAvailable = quantityOwned;
 		id = idGenerator;
@@ -46,8 +48,8 @@ public abstract class Item {
 		return false;
 	}
 
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
 
 	public int getQuantityAvailable() {
@@ -57,8 +59,8 @@ public abstract class Item {
 	@Override
 	public String toString() {
 		return String.format(
-				"Name: %s\nID: %d\nQuantity Owned: %d\nQuantity Available: %d\n",
-				name, id, quantityOwned, quantityAvailable);
+				"Title: %s\nAuthor: %s\nID: %d\nQuantity Owned: %d\nQuantity Available: %d\n",
+				title, author, id, quantityOwned, quantityAvailable);
 	}
 
 }
