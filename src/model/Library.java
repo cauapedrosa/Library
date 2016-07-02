@@ -7,9 +7,9 @@ public class Library {
 	}
 
 	public Item get(String name) {
-		for (int i = 0; i < items.length; i++) {
-			if (items[i].getName().equals(name)) {
-				return items[i];
+		for (Item item : items) {
+			if (item != null && item.getTitle().equals(name)) {
+              return item;
 			}
 		}
 		return null;
