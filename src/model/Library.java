@@ -15,10 +15,10 @@ public class Library {
 		return null;
 	}
 
-	public void add(String name) {
-		for (int i = 0; i < items.length; i++) {
-			if (items[i] == null) {
-				items[i] = name;
+	public void add(Item name) {
+		for (Item item : items) {
+			if (item == null) {
+				item = name;
 				break;
 			}
 		}
