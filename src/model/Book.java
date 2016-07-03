@@ -1,12 +1,14 @@
 package model;
 
 public class Book extends Item {
-	private String author;
-	private int releaseYear;//four digit year (eg 1998)
 
-	public Book(String name, int quantityOwned) {
+	private final int releaseYear;
+        private final String author;
+
+	public Book(String name, int quantityOwned, String author, int releaseYear) {
 		super(name, quantityOwned);
 		this.releaseYear = releaseYear;
+                this.author = author;
 	}
 
 }
