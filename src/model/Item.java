@@ -2,7 +2,6 @@ package model;
 
 public abstract class Item {
 	private String title;
-	private String author;
 	private int id;
 	private int quantityOwned;
 	private int quantityAvailable;
@@ -11,7 +10,6 @@ public abstract class Item {
 
 	public Item(String title, int quantityOwned) {
 		this.title = title;
-		this.author = author;
 		this.quantityOwned = quantityOwned;
 		quantityAvailable = quantityOwned;
 		id = idGenerator;
@@ -59,8 +57,8 @@ public abstract class Item {
 	@Override
 	public String toString() {
 		return String.format(
-				"Title: %s\nAuthor: %s\nID: %d\nQuantity Owned: %d\nQuantity Available: %d\n",
-				title, author, id, quantityOwned, quantityAvailable);
+				"Title: %s\nID: %d\nQuantity Owned: %d\nQuantity Available: %d\n",
+				title, id, quantityOwned, quantityAvailable);
 	}
 
 }
