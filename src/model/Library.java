@@ -9,16 +9,16 @@ public class Library {
 	public Item get(String name) {
 		for (Item item : items) {
 			if (item != null && item.getTitle().equals(name)) {
-              return item;
+				return item;
 			}
 		}
 		return null;
 	}
 
-	public void add(Item name) {
-		for (Item item : items) {
-			if (item == null) {
-				item = name;
+	public void add(Item toAdd) {
+		for (int i = 0; i < items.length; i++) {
+			if (items[i] == null) {
+				items[i] = toAdd;
 				break;
 			}
 		}
