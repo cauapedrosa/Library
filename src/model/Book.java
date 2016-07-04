@@ -3,12 +3,13 @@ package model;
 public class Book extends Item {
 
 	private final int releaseYear;
-        private final String author;
+	private final String author;
 
-	public Book(String name, int quantityOwned, String author, int releaseYear) {
+	public Book(String name, int quantityOwned, String author,
+			int releaseYear) {
 		super(name, quantityOwned);
 		this.releaseYear = releaseYear;
-                this.author = author;
+		this.author = author;
 	}
 
 }
