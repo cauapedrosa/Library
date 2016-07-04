@@ -13,7 +13,16 @@ public abstract class User {
 		return this.password.equals(password);
 	}
 
+	public String getName() {
+		return name;
+	}
+
 	public String getLogin() {
 		return login;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("Name: %s\nLogin: %s\n", name, login);
 	}
 }

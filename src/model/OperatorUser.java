@@ -6,4 +6,8 @@ public class OperatorUser extends User {
 		super(name, login, password);
 	}
 
+	@Override
+	public String toString() {
+		return super.toString() + "Type: Operator\n";
+	}
 }

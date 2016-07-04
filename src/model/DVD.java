@@ -13,4 +13,8 @@ public class DVD extends Item {
 		return length;
 	}
 
+	public String toString(){
+		return "DVD\n" + super.toString() + String
+				.format("Length: %s\n", length);
+	}
 }

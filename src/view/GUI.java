@@ -12,7 +12,7 @@ public class GUI {
 		return JOptionPane.showInputDialog(msg);
 	}
 
-	public static void showMessage(Object object, String msg){
+	public static void showMessage(String msg){
 		JOptionPane.showMessageDialog(null, msg);
 	}
 }

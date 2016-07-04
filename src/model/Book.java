@@ -19,4 +19,10 @@ public class Book extends Item {
 	public String getAuthor() {
 		return author;
 	}
+
+	@Override
+	public String toString() {
+		return "Book\n" + super.toString() + String
+				.format("Author: %s\nRelease Year: %d\n", author, releaseYear);
+	}
 }

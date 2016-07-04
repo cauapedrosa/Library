@@ -21,6 +21,25 @@ public class UserManager {
 		return null;
 	}
 
+	public User login() {
+		String username = GUI.inputStr("Digite seu login");
+		String password = GUI.inputStr("Digite sua senha");
+
+		User user = get(username);
+
+		if (user == null) {
+			GUI.showMessage("Usuário Não Encontrado\n");
+			return null;
+		}
+		
+		if (user.signIn(password)) {
+			return user;
+		} else {
+			GUI.showMessage("Senha Incorreta\n");
+			return null;
+		}
+	}
+
 	public void createCommon() {
 		String name = GUI.inputStr("Name: ");
 		String login = GUI.inputStr("Login: ");

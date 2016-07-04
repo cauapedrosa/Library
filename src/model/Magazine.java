@@ -13,4 +13,8 @@ public class Magazine extends Item {
 		return publisher;
 	}
 
+	public String toString(){
+		return "Magazine\n" + super.toString() + String
+				.format("Publisher: %s\n", publisher);
+	}
 }
