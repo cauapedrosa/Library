@@ -130,7 +130,7 @@ public class Main {
 		if (items[choice].deliver(user)) {
 			GUI.showMessage("Item devolvido com sucesso!\n");
 		} else {
-			GUI.showMessage("Erro: TODO \n");
+			GUI.showMessage("Erro: Escolha Inválida\n");
 		}
 	}
 
@@ -188,7 +188,7 @@ public class Main {
 		String msg = user.toString();
 
 		if (items.length > 0) {
-			msg += "\nRented items:\n";
+			msg += "\nItens Alugados:\n";
 		}
 
 		for (int i = 0; i < items.length; i++) {

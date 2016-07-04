@@ -8,6 +8,6 @@ public class OperatorUser extends User {
 
 	@Override
 	public String toString() {
-		return super.toString() + "Type: Operator\n";
+		return super.toString() + "Tipo de usuário: Operador\n";
 	}
 }

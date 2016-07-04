@@ -22,7 +22,7 @@ public class Book extends Item {
 
 	@Override
 	public String toString() {
-		return "Book\n" + super.toString() + String
-				.format("Author: %s\nRelease Year: %d\n", author, releaseYear);
+		return "Livro:\n" + super.toString() + String
+				.format("Autor: %s\nAno de Lançamento: %d\n", author, releaseYear);
 	}
 }

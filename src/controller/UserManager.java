@@ -41,9 +41,9 @@ public class UserManager {
 	}
 
 	public void createCommon() {
-		String name = GUI.inputStr("Name: ");
+		String name = GUI.inputStr("Nome: ");
 		String login = GUI.inputStr("Login: ");
-		String password = GUI.inputStr("Password: ");
+		String password = GUI.inputStr("Senha: ");
 
 		for (int i = 0; i < users.length; i++) {
 			if (users[i] == null) {
@@ -54,9 +54,9 @@ public class UserManager {
 	}
 
 	public void createOperator() {
-		String name = GUI.inputStr("Name: ");
+		String name = GUI.inputStr("Nome: ");
 		String login = GUI.inputStr("Login: ");
-		String password = GUI.inputStr("Password: ");
+		String password = GUI.inputStr("Senha: ");
 
 		for (int i = 0; i < users.length; i++) {
 			if (users[i] == null) {

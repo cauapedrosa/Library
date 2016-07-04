@@ -23,6 +23,6 @@ public abstract class User {
 
 	@Override
 	public String toString() {
-		return String.format("Name: %s\nLogin: %s\n", name, login);
+		return String.format("Nome: %s\nLogin: %s\n", name, login);
 	}
 }

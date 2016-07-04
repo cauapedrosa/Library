@@ -8,6 +8,6 @@ public class CommonUser extends User {
 	
 	@Override
 	public String toString() {
-		return super.toString() + "Type: Common\n";
+		return super.toString() + "Tipo de usuário: Comum\n";
 	}
 }

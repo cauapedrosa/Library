@@ -71,7 +71,7 @@ public abstract class Item {
 	@Override
 	public String toString() {
 		return String.format(
-				"Title: %s\nID: %d\nQuantity Owned: %d\nQuantity Available: %d\n",
+				"Título: %s\nID: %d\nQuantidade Total: %d\nQuantidade Disponível: %d\n",
 				title, id, quantityOwned, quantityAvailable);
 	}
 
