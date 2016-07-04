@@ -6,52 +6,58 @@ import model.User;
 import view.GUI;
 
 public class Main {
-
 	private static UserManager userManager = new UserManager(100);
-
 	private static Library library = new Library(100);
 
 	public static void main(String[] args) {
 		boolean loopFlag = true;
 
 		while (loopFlag) {
-			int flag = GUI.inputInt(
-					"Digite o número correspondente à operação desejada:\n"
-							+ "1 - Cadastrar Usuário\n" + "2 - Alugar Item\n"
-							+ "3 - Devolver Item\n"
-							+ "4 - Verificar Disponibilidade de Item\n"
-							+ "5 - Cadastrar Item\n"
-							+ "6 - Checar itens alugados por um usuário\n"
-							+ "7 - Procurar item");
+
+			int flag = GUI
+					.inputInt("============================================\n"
+							+ "Digite o número correspondente à operação desejada:\n"
+							+ "============================================\n"
+							+ "0 - Sair\n" + "1 - Procurar item\n"
+							+ "2 - Verificar Disponibilidade de Item\n"
+							+ "3 - Alugar Item\n" + "4 - Devolver Item\n"
+							+ "5 - Checar seus itens alugados\n"
+							+ "6 - Cadastrar Usuário\n"
+							+ "============================================\n"
+							+ "Opções de Administrador:\n"
+							+ "7 - Cadastrar Item\n");
 
 			switch (flag) {
-			case 1:
-				registerUser();
+			case 0:
+				loopFlag = false;
+				break;
 
+			case 1:
+				searchItem();
 				break;
 
 			case 2:
-				rentItem();
-				break;
-
-			case 3:
-				returnItem();
-				break;
-
-			case 4:
 				checkItemStatus();
 				break;
 
-			case 5:
-				registerItem();
+			case 3:
+				rentItem();
 				break;
 
-			case 6:
+			case 4:
+				returnItem();
+				break;
+
+			case 5:
 				userStatus();
 				break;
 
+			case 6:
+				registerUser();
+				break;
+
 			case 7:
-				searchItem();
+				registerItem();
 				break;
 
 			default:
@@ -67,12 +73,11 @@ public class Main {
 		if (flag == 1) {
 			userManager.createCommon();
 		} else if (flag == 2) {
-			
-			int masterPassAttempt = GUI.inputInt("Digite a Senha Mestre\n");
-			if  (masterPassAttempt == 123) {
+
+			String masterPassAttempt = GUI.inputStr("Digite a Senha Mestre\n");
+			if (masterPassAttempt == "123") {
 				userManager.createOperator();
-			} 
-			else if (masterPassAttempt != 123){
+			} else {
 				GUI.showMessage("Senha Mestre Inválida\n");
 			}
 
@@ -181,11 +186,16 @@ public class Main {
 		User user = userManager.login();
 
 		if (user == null) {
+			GUI.showMessage("Erro: Usuário Invalido\n");
 			return;
 		}
 
 		Item[] items = library.rentedBy(user);
 		String msg = user.toString();
+
+		if (items.length == 0) {
+			msg += "\nItens Alugados:\n---Nenhum---\n";
+		}
 
 		if (items.length > 0) {
 			msg += "\nItens Alugados:\n";
