@@ -75,7 +75,7 @@ public class Main {
 		} else if (flag == 2) {
 
 			String masterPassAttempt = GUI.inputStr("Digite a Senha Mestre\n");
-			if (masterPassAttempt == "123") {
+			if ("123".equals(masterPassAttempt)) {
 				userManager.createOperator();
 			} else {
 				GUI.showMessage("Senha Mestre Inválida\n");

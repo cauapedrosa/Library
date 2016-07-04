@@ -48,7 +48,7 @@ public class UserManager {
 		for (int i = 0; i < users.length; i++) {
 			if (users[i] == null) {
 				users[i] = new CommonUser(name, login, password);
-				break;
+				return;
 			}
 		}
 	}
@@ -61,7 +61,7 @@ public class UserManager {
 		for (int i = 0; i < users.length; i++) {
 			if (users[i] == null) {
 				users[i] = new OperatorUser(name, login, password);
-				break;
+				return;
 			}
 		}
 	}

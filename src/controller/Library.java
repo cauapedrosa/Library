@@ -39,6 +39,7 @@ public class Library {
 		return found;
 	}
 
+	//sobrecarga de método
 	public Item get(String name) {
 		for (Item item : items) {
 			if (item != null && item.getTitle().equals(name)) {
@@ -47,7 +48,8 @@ public class Library {
 		}
 		return null;
 	}
-
+	
+	//sobrecarga de método
 	public Item get(int id) {
 		for (Item item : items) {
 			if (item != null && item.getID() == id) {
@@ -112,7 +114,7 @@ public class Library {
 		String name = GUI.inputStr("Nome: ");
 		int quantityOwned = GUI.inputInt("Quantidade Total: ");
 		String author = GUI.inputStr("Autor: ");
-		int releaseYear = GUI.inputInt("Data de lançamento: ");
+		int releaseYear = GUI.inputInt("Ano de lançamento: ");
 
 		add(new Book(name, quantityOwned, author, releaseYear));
 	}
