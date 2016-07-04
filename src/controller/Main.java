@@ -67,9 +67,12 @@ public class Main {
 		if (flag == 1) {
 			userManager.createCommon();
 		} else if (flag == 2) {
-			if (GUI.inputInt("Digite a Senha Mestre\n") == 123) {
+			
+			int masterPassAttempt = GUI.inputInt("Digite a Senha Mestre\n");
+			if  (masterPassAttempt == 123) {
 				userManager.createOperator();
-			} else {
+			} 
+			else if (masterPassAttempt != 123){
 				GUI.showMessage("Senha Mestre Inválida\n");
 			}
 
