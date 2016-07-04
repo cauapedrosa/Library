@@ -16,15 +16,15 @@ public class Main {
 
 			int flag = GUI
 					.inputInt("============================================\n"
-							+ "Digite o n˙mero correspondente ‡ operaÁ„o desejada:\n"
+							+ "Digite o n√∫mero correspondente √† opera√ß√£o desejada:\n"
 							+ "============================================\n"
 							+ "0 - Sair\n" + "1 - Procurar item\n"
 							+ "2 - Verificar Disponibilidade de Item\n"
 							+ "3 - Alugar Item\n" + "4 - Devolver Item\n"
 							+ "5 - Checar seus itens alugados\n"
-							+ "6 - Cadastrar Usu·rio\n"
+							+ "6 - Cadastrar Usu√°rio\n"
 							+ "============================================\n"
-							+ "OpÁıes de Administrador:\n"
+							+ "Op√ß√µes de Administrador:\n"
 							+ "7 - Cadastrar Item\n");
 
 			switch (flag) {
@@ -68,17 +68,17 @@ public class Main {
 	}
 
 	public static void registerUser() {
-		int flag = GUI.inputInt("Qual tipo de Usu·rio deseja cadastrar?\n"
-				+ "1 - Usu·rio Comum\n" + "2 - Usu·rio Operador");
+		int flag = GUI.inputInt("Qual tipo de Usu√°rio deseja cadastrar?\n"
+				+ "1 - Usu√°rio Comum\n" + "2 - Usu√°rio Operador");
 		if (flag == 1) {
 			userManager.createCommon();
 		} else if (flag == 2) {
 
 			String masterPassAttempt = GUI.inputStr("Digite a Senha Mestre\n");
-			if (masterPassAttempt == "123") {
+			if ("123".equals(masterPassAttempt)) {
 				userManager.createOperator();
 			} else {
-				GUI.showMessage("Senha Mestre Inv·lida\n");
+				GUI.showMessage("Senha Mestre Inv√°lida\n");
 			}
 
 		}
@@ -94,7 +94,7 @@ public class Main {
 		Item item = library.getItemByNameOrID();
 
 		if (item == null) {
-			GUI.showMessage("Erro: Livro n„o encontrado\n");
+			GUI.showMessage("Erro: Livro n√£o encontrado\n");
 			return;
 		}
 
@@ -116,7 +116,7 @@ public class Main {
 		Item[] items = library.rentedBy(user);
 
 		if (items.length == 0) {
-			GUI.showMessage("Usu·rio n„o tem nenhum item alugado\n");
+			GUI.showMessage("Usu√°rio n√£o tem nenhum item alugado\n");
 			return;
 		}
 
@@ -128,14 +128,14 @@ public class Main {
 		int choice = GUI.inputInt("Escolha um item:\n" + msg);
 
 		if (choice < 0 || choice >= items.length) {
-			GUI.showMessage("Erro: Escolha Inv·lida\n");
+			GUI.showMessage("Erro: Escolha Inv√°lida\n");
 			return;
 		}
 
 		if (items[choice].deliver(user)) {
 			GUI.showMessage("Item devolvido com sucesso!\n");
 		} else {
-			GUI.showMessage("Erro: Escolha Inv·lida\n");
+			GUI.showMessage("Erro: Escolha Inv√°lida\n");
 		}
 	}
 
@@ -143,7 +143,7 @@ public class Main {
 		Item item = library.getItemByNameOrID();
 
 		if (item == null) {
-			GUI.showMessage("Erro: Item n„o encontrado\n");
+			GUI.showMessage("Erro: Item n√£o encontrado\n");
 			return;
 		}
 
@@ -154,12 +154,12 @@ public class Main {
 		User user = userManager.login();
 
 		if (user == null) {
-			GUI.showMessage("Usu·rio Inv·lido\n");
+			GUI.showMessage("Usu√°rio Inv√°lido\n");
 			return;
 		}
 
 		if (!(user instanceof OperatorUser)) {
-			GUI.showMessage("VocÍ n„o tem permiss„o para fazer isso!\n");
+			GUI.showMessage("Voc√™ n√£o tem permiss√£o para fazer isso!\n");
 			return;
 		}
 
@@ -177,7 +177,7 @@ public class Main {
 			break;
 		default:
 			GUI.showMessage(
-					"Erro: N˙mero Inv·lido (Digite um n˙mero de 1 a 3)\n");
+					"Erro: N√∫mero Inv√°lido (Digite um n√∫mero de 1 a 3)\n");
 			return;
 		}
 	}
@@ -186,7 +186,7 @@ public class Main {
 		User user = userManager.login();
 
 		if (user == null) {
-			GUI.showMessage("Erro: Usu·rio Invalido\n");
+			GUI.showMessage("Erro: Usu√°rio Invalido\n");
 			return;
 		}
 
@@ -210,7 +210,7 @@ public class Main {
 
 	public static void searchItem() {
 		String name = GUI
-				.inputStr("Digite parte do nome do item que vocÍ procura");
+				.inputStr("Digite parte do nome do item que voc√™ procura");
 
 		Item[] items = library.search(name);
 
