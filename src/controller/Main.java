@@ -16,15 +16,15 @@ public class Main {
 
 			int flag = GUI
 					.inputInt("============================================\n"
-							+ "Digite o número correspondente à operação desejada:\n"
+							+ "Digite o numero correspondente a  operacao desejada:\n"
 							+ "============================================\n"
 							+ "0 - Sair\n" + "1 - Procurar item\n"
 							+ "2 - Verificar Disponibilidade de Item\n"
 							+ "3 - Alugar Item\n" + "4 - Devolver Item\n"
 							+ "5 - Checar seus itens alugados\n"
-							+ "6 - Cadastrar Usuário\n"
+							+ "6 - Cadastrar Usuario\n"
 							+ "============================================\n"
-							+ "Opções de Administrador:\n"
+							+ "Opcoes de Administrador:\n"
 							+ "7 - Cadastrar Item\n");
 
 			switch (flag) {
@@ -68,8 +68,8 @@ public class Main {
 	}
 
 	public static void registerUser() {
-		int flag = GUI.inputInt("Qual tipo de Usuário deseja cadastrar?\n"
-				+ "1 - Usuário Comum\n" + "2 - Usuário Operador");
+		int flag = GUI.inputInt("Qual tipo de Usuario deseja cadastrar?\n"
+				+ "1 - Usuario Comum\n" + "2 - Usuario Operador");
 		if (flag == 1) {
 			userManager.createCommon();
 		} else if (flag == 2) {
@@ -78,7 +78,7 @@ public class Main {
 			if ("123".equals(masterPassAttempt)) {
 				userManager.createOperator();
 			} else {
-				GUI.showMessage("Senha Mestre Inválida\n");
+				GUI.showMessage("Senha Mestre Invalida\n");
 			}
 
 		}
@@ -94,7 +94,7 @@ public class Main {
 		Item item = library.getItemByNameOrID();
 
 		if (item == null) {
-			GUI.showMessage("Erro: Livro não encontrado\n");
+			GUI.showMessage("Erro: Livro nao encontrado\n");
 			return;
 		}
 
@@ -116,7 +116,7 @@ public class Main {
 		Item[] items = library.rentedBy(user);
 
 		if (items.length == 0) {
-			GUI.showMessage("Usuário não tem nenhum item alugado\n");
+			GUI.showMessage("Usuario nao tem nenhum item alugado\n");
 			return;
 		}
 
@@ -128,14 +128,14 @@ public class Main {
 		int choice = GUI.inputInt("Escolha um item:\n" + msg);
 
 		if (choice < 0 || choice >= items.length) {
-			GUI.showMessage("Erro: Escolha Inválida\n");
+			GUI.showMessage("Erro: Escolha Invalida\n");
 			return;
 		}
 
 		if (items[choice].deliver(user)) {
 			GUI.showMessage("Item devolvido com sucesso!\n");
 		} else {
-			GUI.showMessage("Erro: Escolha Inválida\n");
+			GUI.showMessage("Erro: Escolha Invalida\n");
 		}
 	}
 
@@ -143,7 +143,7 @@ public class Main {
 		Item item = library.getItemByNameOrID();
 
 		if (item == null) {
-			GUI.showMessage("Erro: Item não encontrado\n");
+			GUI.showMessage("Erro: Item nao encontrado\n");
 			return;
 		}
 
@@ -154,12 +154,12 @@ public class Main {
 		User user = userManager.login();
 
 		if (user == null) {
-			GUI.showMessage("Usuário Inválido\n");
+			GUI.showMessage("Usuario Invalido\n");
 			return;
 		}
 
 		if (!(user instanceof OperatorUser)) {
-			GUI.showMessage("Você não tem permissão para fazer isso!\n");
+			GUI.showMessage("Voce nao tem permissao para fazer isso!\n");
 			return;
 		}
 
@@ -177,7 +177,7 @@ public class Main {
 			break;
 		default:
 			GUI.showMessage(
-					"Erro: Número Inválido (Digite um número de 1 a 3)\n");
+					"Erro: NÃºmero InvÃ¡lido (Digite um nÃºmero de 1 a 3)\n");
 			return;
 		}
 	}
@@ -186,7 +186,7 @@ public class Main {
 		User user = userManager.login();
 
 		if (user == null) {
-			GUI.showMessage("Erro: Usuário Invalido\n");
+			GUI.showMessage("Erro: UsuÃ¡rio Invalido\n");
 			return;
 		}
 
@@ -210,7 +210,7 @@ public class Main {
 
 	public static void searchItem() {
 		String name = GUI
-				.inputStr("Digite parte do nome do item que você procura");
+				.inputStr("Digite parte do nome do item que voce procura");
 
 		Item[] items = library.search(name);
 

@@ -95,7 +95,7 @@ public class Library {
 	public void registerDVD() {
 		String name = GUI.inputStr("Titulo: ");
 		int quantityOwned = GUI.inputInt("Quantidade Total: ");
-		int length = GUI.inputInt("Duração (min): ");
+		int length = GUI.inputInt("DuraÃ§Ã£o (min): ");
 
 		add(new DVD(name, quantityOwned, length));
 
@@ -132,7 +132,7 @@ public class Library {
 			int id = GUI.inputInt("Digite a ID do item");
 			item = get(id);
 		} else {
-			GUI.showMessage("Operação Cancelada\n");
+			GUI.showMessage("OperaÃ§Ã£o Cancelada\n");
 		}
 
 		return item;
